@@ -1,0 +1,25 @@
+<%- include("header.ejs") %>
+    <div class="container">
+        <form class="input-area" id="myForm" method="post">
+            <input style="text-transform: capitalize;" type="text" name="name" placeholder=
+            <%if(locals.name){%>
+            <%=locals.name%>
+            <%} else {%> 
+                "Ekans"
+            <%}%>>
+            <input type="submit" value="Buscar" formaction="/search-pokemon">
+        </form>
+
+        <div class="response-area">
+            <%if(locals.image){%>
+                <p class="response-area"><img src="<%= locals.image %>">
+                    <%= locals.name.charAt(0).toUpperCase() + locals.name.slice(1)%> is <%= locals.type %> <% if(locals.type2){%>and <%= locals.type2 %><%}%> type </p>
+            <%} else if(locals.error){%>
+                <p> <%= locals.error %> </p>
+            <%} else {%>
+                <p>Busca a tu pokémon favorito!</p> 
+            <%}%>
+        </div>
+    </div>
+</body>
+</html>
