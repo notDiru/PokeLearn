@@ -34,9 +34,10 @@ body{
 .spam,
 .spam:visited,
 .spam:link{
+    display: flex;
+    justify-content: center;
     text-decoration: none;
     color: black;
-    margin-left: 620px;
 }
 
 .spam:hover{
