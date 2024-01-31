@@ -30,7 +30,6 @@ app.post("/search-pokemon", (req, res) => {
             name: info.name,
             type: info.types[0]?.type.name,
             type2: info.types[1]?.type.name,
-            error: ""
         }) 
     })
 });
